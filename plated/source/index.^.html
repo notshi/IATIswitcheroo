@@ -14,6 +14,7 @@ IATI Switcheroo
 <script type="text/javascript">
 	require("switcheroo").start()
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 
 <style>
 {css}
@@ -48,6 +49,33 @@ IATI Switcheroo
 		Data conversion is made locally in the browser and never sent to an external server.<br/>
 		<span class="logo">IATI Switcheroo (v0.2)</span> is a web based version of the <a href="https://github.com/devinit/D-Portal/tree/master/dflat" target="_blank">dflat</a> command line tool.<br/>
 		Project page, issues and feedback on <a href="https://github.com/notshi/IATIswitcheroo" target="_blank">Github</a>.
+	</div>
+</div>
+<div onclick="$('#utter_wrap').toggle();" class="utter_link">&#128172;</div>
+<div id="utter_wrap">
+	<div onclick="$('#utter_wrap').toggle();" class="utter_link">&#10005;</div>
+	<div class="utter_text">Do you have a question about IATI Switcheroo? Please send us your comments below.</div>
+	<div class="utter_box" id="insert_utter_code">
+		<script>
+			$(function(){
+				let randomid=(new Date)+'';
+				let s = document.createElement("script");
+					s.type  = "text/javascript";
+					s.setAttribute("src","https://utteranc.es/client.js")
+					s.setAttribute("repo","notshi/IATIswitcheroo")
+					s.setAttribute("issue-term","Comment on "+randomid)
+					s.setAttribute("label","question")
+					s.setAttribute("theme","github-light")
+					s.setAttribute("crossorigin","anonymous")
+					s.setAttribute("async","1")
+				let e=document.getElementById("insert_utter_code")
+				if(!e.getAttribute("donestuff"))
+				{
+					e.setAttribute("donestuff","1")
+					e.appendChild(s)
+				}
+			})
+		</script>
 	</div>
 </div>
 <a href="https://blacklivesmatters.carrd.co/" target="_blank" class="ticker_wrap">

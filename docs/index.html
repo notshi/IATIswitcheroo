@@ -7,6 +7,7 @@
 <script type="text/javascript">
 	require("switcheroo").start()
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 
 <style>
 
@@ -34,6 +35,13 @@ a{-webkit-transition:all .2s ease-in-out; -moz-transition:all .2s ease-in-out; -
 .contact		{margin:0 auto; margin-top:2em; font-size:14px; line-height:1.5em; text-align:center;}
 .contact a		{color:#034dfb; text-decoration:none; font-style:italic; font-family:monospace; background:#eee; padding:0 5px; border-radius:4px;}
 .contact a:hover{color:#034dfb; text-decoration:none; background:#fff;}
+
+/*	UTTER COMMENT BOX	*/
+.utter_link			{position:fixed; bottom:100px; right:0; padding:15px 10px 15px 15px; background-color:#5a67ac; border-radius:30px 0 0 30px; font-size:25px; color:#fff; font-weight:bold; z-index:2;}
+.utter_link:hover	{cursor:pointer; background-color:#5b6fdb;}
+#utter_wrap			{background-color:#fff; border-left:2px solid #f1f8ff; display:none; height:100%; position:fixed; top:0; right:0; width:600px; max-width:600px; overflow-y:auto; z-index:2;}
+.utter_text			{margin-left:auto; margin-right:auto; width:100%; max-width:500px; margin-top:40px; font-size:21px; line-height:30px;}
+.utterances			{max-width:500px; margin-top:20px;}
 
 /*	TICKER	*/
 @-webkit- ticker	{0% {-webkit-transform:translate3d(0,0,0); transform:translate3d(0,0,0); visibility:visible;} 100% {-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);}}
@@ -78,6 +86,33 @@ a{-webkit-transition:all .2s ease-in-out; -moz-transition:all .2s ease-in-out; -
         Data conversion is made locally in the browser and never sent to an external server.<br/>
         <span class="logo">IATI Switcheroo (v0.2)</span> is a web based version of the <a href="https://github.com/devinit/D-Portal/tree/master/dflat" target="_blank">dflat</a> command line tool.<br/>
         Project page, issues and feedback on <a href="https://github.com/notshi/IATIswitcheroo" target="_blank">Github</a>.
+    </div>
+</div>
+<div onclick="$('#utter_wrap').toggle();" class="utter_link">&#128172;</div>
+<div id="utter_wrap">
+    <div onclick="$('#utter_wrap').toggle();" class="utter_link">&#10005;</div>
+    <div class="utter_text">Do you have a question about IATI Switcheroo? Please send us your comments below.</div>
+    <div class="utter_box" id="insert_utter_code">
+        <script>
+            $(function(){
+                let randomid=(new Date)+'';
+                let s = document.createElement("script");
+                    s.type  = "text/javascript";
+                    s.setAttribute("src","https://utteranc.es/client.js")
+                    s.setAttribute("repo","notshi/IATIswitcheroo")
+                    s.setAttribute("issue-term","Comment on "+randomid)
+                    s.setAttribute("label","question")
+                    s.setAttribute("theme","github-light")
+                    s.setAttribute("crossorigin","anonymous")
+                    s.setAttribute("async","1")
+                let e=document.getElementById("insert_utter_code")
+                if(!e.getAttribute("donestuff"))
+                {
+                    e.setAttribute("donestuff","1")
+                    e.appendChild(s)
+                }
+            })
+        </script>
     </div>
 </div>
 <a href="https://blacklivesmatters.carrd.co/" target="_blank" class="ticker_wrap">
